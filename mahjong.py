@@ -191,8 +191,6 @@ for j in range(100000):
     print(j)
     params = pd.DataFrame(merged['_merge'] == 'both').T
     fullhands = pd.concat([fullhands, params])
-    if j == 9: # for demonstration purposes
-        break
 
 data = pd.DataFrame()
 data['hand'] = hands
@@ -212,6 +210,6 @@ print(data)
 print(fullhands)
 directory = Path(r'C:\Users\Flora Zhu\Downloads\cs109proj')
 directory.mkdir(parents=True, exist_ok=True)
-#data.to_csv(directory / 'mahjong_hands_train.csv')
-#fullhands.to_csv(directory / 'fullhands_train.csv')
+data.to_csv(directory / 'mahjong_hands_train.csv')
+fullhands.to_csv(directory / 'fullhands_train.csv')
 df_tiles.to_csv(directory / 'mahjong_deck.csv')
